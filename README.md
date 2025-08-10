@@ -1,4 +1,4 @@
-# Gyaan Kriti - HR Website
+# HR Website
 
 This is a simple HR website.  
 It shows company policies, job openings, employee details, and a contact form.
