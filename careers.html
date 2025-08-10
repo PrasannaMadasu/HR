@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Careers - Gyaan Kriti</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        function filterJobs() {
+            let input = document.getElementById('jobSearch').value.toLowerCase();
+            let jobCards = document.getElementsByClassName('job-card');
+
+            for (let i = 0; i < jobCards.length; i++) {
+                let text = jobCards[i].innerText.toLowerCase();
+                jobCards[i].style.display = text.includes(input) ? '' : 'none';
+            }
+        }
+    </script>
+</head>
+<body>
+<header>
+    <nav>
+        <div class="company-name">Gyaan Kriti</div>
+        <ul>
+            <li><a href="index.html">Home</a> </li>
+            <li><a href="policies.html">HR Policies</a> </li>
+            <li><a href="careers.html" class="active">Careers</a> </li>
+            <li><a href="directory.html">Employee Directory</a> </li>
+            <li><a href="contact.html">Contact</a> </li>
+        </ul>
+    </nav>
+</header>
+
+<section class="banner">
+    <h1>Join Our Team</h1>
+    <p>Explore opportunities to grow your career with us</p>
+</section> 
+
+<main class="jobs-container">
+    <input type="text" id="jobSearch" placeholder="Search jobs..." onkeyup="filterJobs()" style="width:80%; padding:8px; margin-bottom:20px;margin-top:20px;">
+
+    <div class="card job-card">
+        <h3>Software Developer</h3>
+        <p>Looking for passionate coders with 2+ years of experience in Python/Java.</p>
+        <button class="apply-btn">Apply Now</button>
+    </div>
+    <div class="card job-card">
+        <h3>Subject Matter Expert</h3>
+        <p>Need to create and validate question papers in your area of expertise.</p>
+        <button class="apply-btn">Apply Now</button>
+    </div>
+    <div class="card job-card">
+        <h3>Academic Reviewer</h3>
+        <p>Ensures quality, accuracy, and compliance with educational standards.</p>
+        <button class="apply-btn">Apply Now</button>
+    </div>
+    <div class="card job-card">
+        <h3>Curriculum Designer</h3>
+        <p>Align assessments with learning outcomes.</p>
+        <button class="apply-btn">Apply Now</button>
+    </div>
+    <div class="card job-card">
+        <h3>HR Executive</h3>
+        <p>Manage employee relations, recruitment, and policy implementation.</p>
+        <button class="apply-btn">Apply Now</button>
+    </div>
+    <div class="card job-card">
+        <h3>Graphic Designer</h3>
+        <p>Creative minds with a strong portfolio in Adobe Photoshop/Illustrator.</p>
+        <button class="apply-btn">Apply Now</button>
+    </div>
+</main>
+</body>
+</html>

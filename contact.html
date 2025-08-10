@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact HR - Gyaan Kriti</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        function validateForm(event) {
+            event.preventDefault();   /* it will stop the default form submission */
+
+            let name = document.getElementById('name').value.trim();
+            let email = document.getElementById('email').value.trim();
+            let message = document.getElementById('message').value.trim();
+            let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+            if (name === "") {
+                alert("Please enter your name.");
+                return false;
+            }
+            if (!emailPattern.test(email)) {
+                alert("Please enter a valid email address.");
+                return false;
+            }
+            if (message.length < 15) {
+                alert("Message should be at least 10 characters long.");
+                return false;
+            }
+            alert("Form submitted successfully!");
+            document.getElementById('contactForm').reset();
+            return true;
+        }
+    </script>
+</head>
+<body>
+<header>
+    <nav>
+        <div class="company-name">Gyaan Kriti</div>
+        <ul>
+            <li><a href="index.html">Home</a> </li>
+            <li><a href="policies.html">HR Policies</a> </li>
+            <li><a href="careers.html">Careers</a> </li>
+            <li><a href="directory.html">Employee Directory</a> </li>
+            <li><a href="contact.html" class="active">Contact</a> </li>
+        </ul>
+    </nav>
+</header>
+
+<section class="banner">
+    <h1>Contact HR</h1>
+    <p>Contact us for any Requests or Queries.</p>
+</section>
+
+<main class="container">
+    <form class="contact-form" id="contactForm" onsubmit="validateForm(event)">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name">
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email">
+
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" rows="5"></textarea>
+
+        <button type="submit">Submit</button>
+    </form>
+</main>
+
+</body>
+</html>
